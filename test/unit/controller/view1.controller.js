@@ -1,0 +1,1 @@
+sap.ui.define(["cie/pickConfirm/controller/view1.controller"],function(e){"use strict";QUnit.module("view1 Controller");QUnit.test("I should test the view1 controller",function(t){var n=new e;n.onInit();t.ok(n)})});

@@ -1,0 +1,13 @@
+<mvc:View controllerName="cie.pickConfirm.controller.scan" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" height="100%" xmlns:table="sap.ui.table" xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table">
+	<Page title="" showHeader="false" showNavButton="true" showSubHeader="true">
+		<content>
+			<!--<Button width="8em" text="Cancel" type="Emphasized" press="onPressBack"/>-->
+			<Label text="Outbound Delivery" textAlign="Center" design="Bold"></Label>
+				<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">
+					<Input value="{globalProperties>/DeliveryDocument}" submit="onChangeSearch"  maxLength="8" width="100%" id="id_DeliveryDocument"></Input>
+				</FlexBox>
+		</content>
+	</Page>
+</mvc:View>
