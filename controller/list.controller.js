@@ -29,7 +29,9 @@ sap.ui.define([
 			
 
 		},
-
+onAfterRendering: function() {
+	// this.getView().byId("id_Batch").getFocusDomRef().focus();
+},
 		onSelect: function (oEvent) {
 			
 
@@ -623,6 +625,7 @@ sap.ui.define([
 						this.YY1_ZSDFIFO002 = oData.results;
 						// this.setGlobalProperty("/YY1_ZSDFIFO002", oData.results);
 					}
+						this.getView().byId("id_Batch").getFocusDomRef().focus();
 					// this.onPressSearch();
 				}.bind(this),
 				error: function (oError) {
