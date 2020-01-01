@@ -1,0 +1,125 @@
+<mvc:View controllerName="cie.pickConfirm.controller.list" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" height="100%" xmlns:table="sap.ui.table" xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table">
+	<Page title="{globalProperties>/OutbDeliveryItem/0/DeliveryDocument}" showHeader="false" showNavButton="true" showSubHeader="true"
+		class="sapUiContentPadding">
+		<Bar>
+			<contentLeft>
+				<ToggleButton text="{i18n>Cancel}" type="Emphasized" press="onPressCancel"/>
+			</contentLeft>
+			<contentMiddle>
+				<Text text="{globalProperties>/OutbDeliveryItem/0/DeliveryDocument}" width="100%"></Text>
+			</contentMiddle>
+			<contentRight>
+				<ToggleButton text="{i18n>Delete}" type="Emphasized" press="onPressDelete"/>
+			</contentRight>
+		</Bar>
+		<SearchField width="100%" id="id_Batch" placeholder="{i18n>Batch}" search="onSearchBatch" value="{globalProperties>/Batch1}"
+			suggest="onSearchBatch"/>
+		<FlexBox renderType="Div">
+			<items>
+				<Text text="{i18n>Batch}:">
+					<layoutData>
+						<FlexItemData alignSelf="Center" baseSize="50%"/>
+					</layoutData>
+				</Text>
+				<Input value="{globalProperties>/Batch2}" editable="false" textAlign="Begin" placeholder="" submit="onPressSearch">
+					<layoutData>
+						<FlexItemData alignSelf="End" baseSize="100%"/>
+					</layoutData>
+				</Input>
+			</items>
+		</FlexBox>
+		<FlexBox renderType="Div">
+			<items>
+				<Text text="{i18n>DeliveryQuantity}:">
+					<layoutData>
+						<FlexItemData alignSelf="Center" baseSize="50%"/>
+					</layoutData>
+				</Text>
+				<Input value="{globalProperties>/MatlWrhsStkQtyInMatlBaseUnit}" editable="false" textAlign="Begin" placeholder="">
+					<layoutData>
+						<FlexItemData alignSelf="End" baseSize="100%"/>
+					</layoutData>
+				</Input>
+			</items>
+		</FlexBox>
+		<FlexBox renderType="Div">
+			<items>
+				<Text text="需要数量:">
+					<layoutData>
+						<FlexItemData alignSelf="Center" baseSize="20%"/>
+					</layoutData>
+				</Text>
+				<Input value="{globalProperties>/Pickvalue1}" editable="false" textAlign="Begin" placeholder="">
+					<layoutData>
+						<FlexItemData alignSelf="End" baseSize="30%"/>
+					</layoutData>
+				</Input>
+				<Text text="拣配数量:">
+					<layoutData>
+						<FlexItemData alignSelf="Center" baseSize="20%"/>
+					</layoutData>
+				</Text>
+				<Input value="{globalProperties>/Pickvalue2}" editable="false" textAlign="Begin" placeholder="">
+					<layoutData>
+						<FlexItemData alignSelf="End" baseSize="30%"/>
+					</layoutData>
+				</Input>
+			</items>
+		</FlexBox>
+		<Table id="id_table" items="{path: 'globalProperties>/OutbDeliveryItem',sorter: {path: ''}}" selectionChange="onPressClick"
+			includeItemInSelection="false" mode="None">
+			<columns>
+				<Column width="17%" hAlign="Left"></Column>
+				<Column width="25%" hAlign="Left">
+					<Text text="{i18n>Item}"/>
+				</Column>
+				<Column width="28%" hAlign="Left">
+					<Text text="{i18n>Material}"/>
+				</Column>
+				<Column width="30%" hAlign="Left">
+					<Text text="{i18n>Batch}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onPressDetail">
+					<!--<customData>-->
+					<!--<core:CustomData key="color" value="{path:'globalProperties>ActualDeliveryQuantity',formatter:'.css_Color'}" writeToDom="true"/>-->
+					<!--	<core:CustomData key="color"-->
+					<!--		value=""-->
+					<!--		writeToDom="true"/>-->
+					<!--</customData>-->
+					<!--<RadioButton groupName="GroupA"  />-->
+					<CheckBox select="onSelect"/>
+					<cells>
+						<ObjectStatus text="{path:'globalProperties>DeliveryDocumentItem',formatter:'.deleteLeftZero'}"
+							state="{parts:[{path:'globalProperties>ActualDeliveryQuantity'},{path:'globalProperties>HigherLvlItmOfBatSpltItm'},{path:'globalProperties>Batch'}],formatter:'.css_Color'}"/>
+						<Text text="{globalProperties>Material}"/>
+						<!--<Text text="{globalProperties>Batch}"/>-->
+						<ObjectIdentifier title="{globalProperties>Batch}" text="{globalProperties>CustmerBatch}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<!--<Label text="{i18n>MaterialByCustomer}" textAlign="Center" design="Bold"></Label>-->
+		<!--<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">-->
+		<!--	<Text text="{globalProperties>/OutbDeliveryItemDetail/MaterialByCustomer}" width="100%"></Text>-->
+		<!--</FlexBox>-->
+		<!--<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">-->
+		<!--	<Input value="{globalProperties>/MaterialByCustomer}" submit="onChangeSearchMaterialByCustomer" width="100%"-->
+		<!--		editable="{path:'globalProperties>/OutbDeliveryItemDetail/MaterialByCustomer',formatter:'.edit'}"></Input>-->
+		<!--</FlexBox>-->
+		<!--<Label text="{i18n>CustomerBatch}" textAlign="Center" design="Bold"></Label>-->
+		<!--<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">-->
+		<!--	<Input value="{globalProperties>/CustmerBatch}" width="100%"></Input>-->
+		<!--</FlexBox>-->
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button width="8em" text="{i18n>Save}" type="Emphasized" press="onPressPatch"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

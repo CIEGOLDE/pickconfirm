@@ -1,0 +1,1 @@
+sap.ui.define(["cie/pickConfirm/controller/BaseController"],function(e){"use strict";return e.extend("cie.pickConfirm.controller.App",{onInit:function(){this.getView().addStyleClass(this.getContentDensityClass())},onBeforeRendering:function(){}})});

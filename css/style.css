@@ -1,0 +1,73 @@
+/* Enter your custom styles here */
+
+.sapMLabel {
+    color: #6a6d70;
+    /* font-size: 0.875rem; */
+    font-size: 2rem;
+    font-family: "72", "72full", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+
+/*.sapMListTblHighlightCol + .sapMListTblHeaderCell, .sapMListTblHighlightCell + .sapMListTblCell {*/
+
+
+/*    padding-left: 0rem;*/
+
+
+/*}*/
+
+
+/*.sapUiSizeCompact .sapMRbB {*/
+
+
+/*    height: 1rem;*/
+
+
+/*    line-height: 1rem;*/
+
+
+/*    width: 1rem;*/
+
+
+/*}*/
+
+
+/*.css_Color{*/
+
+
+/*	 background-color:#00ff00; */
+
+
+/*}*/
+
+
+/*tr[data-color="color1"] {*/
+
+
+/*   background-color: yellow;*/
+
+
+/*}*/
+
+
+/*tr[data-color="color2"] {*/
+
+
+/*   background-color: green;*/
+
+
+/*}*/
+
+.clss1 {
+    background-color: red;
+    color: red;
+}

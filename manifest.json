@@ -1,0 +1,137 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "cie.pickConfirm",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"API_OUTBOUND_DELIVERY_SRV": {
+				"uri": "/destinations/S4HANACLOUD_BASIC/API_OUTBOUND_DELIVERY_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": []
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "cie.pickConfirm.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "cie.pickConfirm.i18n.i18n"
+				}
+			},
+			"currentUser": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "/services/userapi/currentUser"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "cie.pickConfirm.view",
+				"controlId": "App",
+				"controlAggregation": "pages",
+				"async": true,
+				"transition": "slide",
+				"bypassed": {
+					"target": [
+						"scan"
+					]
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "scan",
+					"greedy": false,
+					"titleTarget": "",
+					"target": [
+						"scan"
+					]
+				},
+				{
+					"pattern": "/{DeliveryDocument}",
+					"name": "list",
+					"greedy": false,
+					"titleTarget": "",
+					"target": [
+						"list"
+					]
+				}
+			],
+			"targets": {
+				"scan": {
+					"viewName": "scan",
+					"viewLevel": 1,
+					"controlAggregation": "pages",
+					"clearControlAggregation": true
+				},
+				"list": {
+					"viewName": "list",
+					"viewLevel": 1,
+					"controlAggregation": "pages",
+					"clearControlAggregation": true
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
+	}
+}

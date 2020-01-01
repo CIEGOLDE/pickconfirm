@@ -1,0 +1,7 @@
+<mvc:View controllerName="cie.pickConfirm.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" height="100%">
+	<!--<Shell appWidthLimited="false">-->
+	<!--<app>-->
+	<App id="App"></App>
+	<!--</app>-->
+	<!--</Shell>-->
+</mvc:View>

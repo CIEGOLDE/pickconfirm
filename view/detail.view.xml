@@ -1,0 +1,119 @@
+<mvc:View controllerName="cie.pickConfirm.controller.detail" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" height="100%" xmlns:table="sap.ui.table" xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table">
+	<Page title="" showHeader="false" showNavButton="true" showSubHeader="true" class="sapUiContentPadding">
+		<Bar>
+			<contentLeft>
+				<ToggleButton text="Cancel" type="Emphasized" press="onPressCancel"/>
+			</contentLeft>
+			<contentRight>
+				<ToggleButton text="Save" type="Emphasized" press="onPressPatch"/>
+			</contentRight>
+		</Bar>
+		<content>
+			<FlexBox renderType="Div">
+				<items>
+					<Text text="DeliveryDocument:">
+						<layoutData>
+							<FlexItemData alignSelf="Center" baseSize="50%"/>
+						</layoutData>
+					</Text>
+					<Input value="{globalProperties>/OutbDeliveryItemDetail/DeliveryDocument}" editable="false" textAlign="Begin" placeholder="">
+						<layoutData>
+							<FlexItemData alignSelf="End" baseSize="100%"/>
+						</layoutData>
+					</Input>
+				</items>
+			</FlexBox>
+			<FlexBox renderType="Div">
+				<items>
+					<Text text="Item:">
+						<layoutData>
+							<FlexItemData alignSelf="Center" baseSize="50%"/>
+						</layoutData>
+					</Text>
+					<Input value="{globalProperties>/OutbDeliveryItemDetail/DeliveryDocumentItem}" editable="false" textAlign="Begin" placeholder="">
+						<layoutData>
+							<FlexItemData alignSelf="End" baseSize="100%"/>
+						</layoutData>
+					</Input>
+				</items>
+			</FlexBox>
+			<FlexBox renderType="Div">
+				<items>
+					<Text text="Plant:">
+						<layoutData>
+							<FlexItemData alignSelf="Center" baseSize="50%"/>
+						</layoutData>
+					</Text>
+					<Input value="{globalProperties>/OutbDeliveryItemDetail/Plant}" editable="false" textAlign="Begin" placeholder="">
+						<layoutData>
+							<FlexItemData alignSelf="End" baseSize="100%"/>
+						</layoutData>
+					</Input>
+				</items>
+			</FlexBox>
+			<FlexBox renderType="Div">
+				<items>
+					<Text text="Material:">
+						<layoutData>
+							<FlexItemData alignSelf="Center" baseSize="50%"/>
+						</layoutData>
+					</Text>
+					<Input value="{globalProperties>/OutbDeliveryItemDetail/Material}" editable="false" textAlign="Begin" placeholder="">
+						<layoutData>
+							<FlexItemData alignSelf="End" baseSize="100%"/>
+						</layoutData>
+					</Input>
+				</items>
+			</FlexBox>
+			<FlexBox renderType="Div">
+				<items>
+					<Text text="Batch:">
+						<layoutData>
+							<FlexItemData alignSelf="Center" baseSize="50%"/>
+						</layoutData>
+					</Text>
+					<Input value="{globalProperties>/Batch}" editable="true" textAlign="Begin" placeholder="" id="id_Batch" submit="onPressSearch">
+						<layoutData>
+							<FlexItemData alignSelf="End" baseSize="100%"/>
+						</layoutData>
+					</Input>
+				</items>
+			</FlexBox>
+			<FlexBox renderType="Div">
+				<items>
+					<Text text="Delivery Quantity:">
+						<layoutData>
+							<FlexItemData alignSelf="Center" baseSize="50%"/>
+						</layoutData>
+					</Text>
+					<Input value="{globalProperties>/MatlWrhsStkQtyInMatlBaseUnit}" editable="false" textAlign="Begin" placeholder="">
+						<layoutData>
+							<FlexItemData alignSelf="End" baseSize="100%"/>
+						</layoutData>
+					</Input>
+				</items>
+			</FlexBox>
+			<Label text="MaterialByCustomer" textAlign="Center" design="Bold"></Label>
+			<!--<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">-->
+			<!--	<Text text="{globalProperties>/OutbDeliveryItemDetail/MaterialByCustomer}" width="100%"></Text>-->
+			<!--</FlexBox>-->
+			<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">
+				<Input value="{globalProperties>/MaterialByCustomer}" submit="onChangeSearchMaterialByCustomer" width="100%"
+					editable="{path:'globalProperties>/OutbDeliveryItemDetail/MaterialByCustomer',formatter:'.edit'}"></Input>
+			</FlexBox>
+			<Label text="CustmerBatch" textAlign="Center" design="Bold"></Label>
+			<FlexBox justifyContent="Center" height="20px" wrap="Wrap" width="100%">
+				<Input value="{globalProperties>/CustmerBatch}" width="100%"></Input>
+			</FlexBox>
+		</content>
+		<!--<footer>-->
+		<!--	<Bar>-->
+		<!--		<contentRight>-->
+		<!--			<Button width="8em" text="Sure" type="Emphasized" press="onPressSure"/>-->
+		<!--		</contentRight>-->
+		<!--	</Bar>-->
+		<!--</footer>-->
+	</Page>
+</mvc:View>
